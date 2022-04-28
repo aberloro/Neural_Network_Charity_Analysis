@@ -25,10 +25,16 @@ Use neural network to create a binary classifier that is capable of predicting a
 
   ### Compiling, Training, and Evaluating the Model
    - How many neurons, layers, and activation functions did you select for your neural network model, and why? 
-   - Were you able to achieve the target model performance?
-   - What steps did you take to try and increase model performance?
+      - 3 hidden layers
+      - 120, 60, and 20 neurons for layers 1-3 respectively.
+      - Additional layers and neurons were meant to improve the model's ability to process nonlinear data and weigh features. 
+      - ReLU was used for layers 1 + 2 while sigmoid was used for layer 3 and the ooutput layer. ReLU is great for nonlinear data and sigmoid helps with classification. 
+   - Were you able to achieve the target model performance? Yes! The optimized model has an accuracy score of 80% and loss of 0.45. 
+   - What steps did you take to try and increase model performance? I went through iterations to see what changes worked the best:
+      - [Attempt 1](): removal of noisy features SPECIAL_CONSIDERATIONS and STATUS. Almost no improvement.
+      - [Attempt 2](): adjust bins for APPLICATION_TYPE and CLASSIFICATION. Slight deterioration of accuracy.
+      - [Attempt 3](): retain and encode NAME data. This was the most impactful change and took accuracy from 73% to 80%
+      - [Final Model](): add neurons, layers, and additional epochs. No change over attempt 3. 
   
 ## Summary
-  ### Conclusions
-  ### Limitations
-  ### Additional Analysis - different model
+Retaining and encoding the NAME data had the biggest impact on the accuracy of this model.  Counting the number of times eacch name appeared is equivalent to counting how many times they applied: companies who applied 3 or more times were more likely to succeed if funded.  A Random Forest Model would be another option for this data because it is an ensemblel learner that tolerates nonliner data and would be easier to code and faster to run than this neural network. 
