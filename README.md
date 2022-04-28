@@ -42,11 +42,28 @@ Use neural network to create a binary classifier that is capable of predicting a
    - Were you able to achieve the target model performance? 
       - Yes! The optimized model has an accuracy score of 80% and loss of 0.45. 
    - What steps did you take to try and increase model performance? I went through iterations to see what changes worked the best:
-      - [Non-Optimized](https://github.com/aberloro/Neural_Network_Charity_Analysis/blob/main/AlphabetSoupCharity.ipynb): accuracy score of .7299
+      - [Non-Optimized](https://github.com/aberloro/Neural_Network_Charity_Analysis/blob/main/AlphabetSoupCharity.ipynb): Accuracy score of .7299
+      
+      ![nonOptimized](https://user-images.githubusercontent.com/93740725/165677750-c311e5ee-79ab-4967-a430-f7a988fdaf1c.png)
+
       - [Attempt 1](https://github.com/aberloro/Neural_Network_Charity_Analysis/blob/main/Optimization_Iterations/AlphabetSoupCharity_Optimization_01.ipynb): removal of noisy features SPECIAL_CONSIDERATIONS and STATUS. Almost no improvement.
+      
+      ![Attempt1](https://user-images.githubusercontent.com/93740725/165677804-ff7ec90f-c7e4-429d-aa76-f11b7a404903.png)
+
       - [Attempt 2](https://github.com/aberloro/Neural_Network_Charity_Analysis/blob/main/Optimization_Iterations/AlphabetSoupCharity_Optimization_02.ipynb): adjust bins for APPLICATION_TYPE and CLASSIFICATION. Slight deterioration of accuracy.
+
+      ![Attempt2](https://user-images.githubusercontent.com/93740725/165677831-88196fac-4106-4dcd-a5f9-fae09cf9603c.png)
+
+
       - [Attempt 3](https://github.com/aberloro/Neural_Network_Charity_Analysis/blob/main/Optimization_Iterations/AlphabetSoupCharity_Optimization_03.ipynb): retain and encode NAME data. This was the most impactful change and took accuracy from 73% to 80%
-      - [Final Model](https://github.com/aberloro/Neural_Network_Charity_Analysis/blob/main/AlphabetSoupCharity_Optimization.ipynb): add neurons, layers, and additional epochs. No change over attempt 3. 
+
+      ![Attempt3](https://user-images.githubusercontent.com/93740725/165677864-63e093d1-cbad-4be6-81d6-9b1fd1ea168f.png)
+
+
+      - [Final Model](https://github.com/aberloro/Neural_Network_Charity_Analysis/blob/main/AlphabetSoupCharity_Optimization.ipynb): add neurons, layers, and additional epochs. Almost no change over attempt 3. 
+
+      ![Attempt4](https://user-images.githubusercontent.com/93740725/165677881-447fa508-8123-46f3-bf96-dd2cec9e6464.png)
+
   
 ## Summary
 Retaining and encoding the NAME data had the biggest impact on the accuracy of this model.  Counting the number of times eacch name appeared is equivalent to counting how many times they applied: companies who applied 3 or more times were more likely to succeed if funded.  A Random Forest Model would be another option for this data because it is an ensemblel learner that tolerates nonliner data and may be easier to code and faster to run than this neural network. 
